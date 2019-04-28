@@ -8,12 +8,15 @@ import javax.persistence.*;
 @Table(name = "Seller")
 public class Seller extends Model {
 
+//    @OneToOne
+////    @JoinColumn(name = "customerId", referencedColumnName = "customerId")
+////    private Customer customer;
     @Id
-    @Column(name = "SellerId")
-    private String Id;
+    @Column(name = "sellerId")
+    private String sellerId;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "storeName")
+    private String storeName;
 
     @Column(name = "category")
     private String category;
@@ -22,21 +25,21 @@ public class Seller extends Model {
 //    private List<BookM> books;
 
 
-    public String getId() {
-        return Id;
-    }
+//    public String getId() {
+//        return Id;
+//    }
+//
+//    public void setId(String id) {
+//        Id = id;
+//    }
 
-    public void setId(String id) {
-        Id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public String getCategory() {
         return category;

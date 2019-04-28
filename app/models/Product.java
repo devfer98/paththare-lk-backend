@@ -23,12 +23,15 @@ public class Product extends Model {
     private String category;
 
     @ManyToOne
-    @JoinColumn(name = "seller_id", referencedColumnName = "SellerId")
+    @JoinColumn(name = "sellerId", referencedColumnName = "sellerId")
+    private Seller seller;
 
     @ManyToMany(mappedBy = "products")
     private List<Promoter> promoters;
 
-    private Seller seller;
+    @ManyToMany
+    @JoinTable(name="buys")
+    private List<Customer> customers;
 
     public String getId() {
         return Id;

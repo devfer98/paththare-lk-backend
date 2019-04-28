@@ -9,9 +9,13 @@ import java.util.List;
 @Table(name = "Promoter")
 public class Promoter extends Model {
 
+//    @OneToOne
+//    @JoinColumn(name = "customerId", referencedColumnName = "customerId")
+//    private Customer customer;
+
     @Id
-    @Column(name = "PromoterId")
-    private String Id;
+    @Column(name = "promoterId")
+    private String promoterId;
 
     @Column(name = "name")
     private String name;
@@ -20,5 +24,6 @@ public class Promoter extends Model {
     private String category;
 
     @ManyToMany
+    @JoinTable(name="promotes")
     private List<Product> products;
 }

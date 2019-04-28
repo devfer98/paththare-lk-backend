@@ -11,7 +11,7 @@ import java.util.List;
 public class Customer extends Model {
 
     public Customer(String id, String fName, String lName, String email, String phoneNo) {
-        Id = id;
+        this.Id = id;
         this.fName = fName;
         this.lName = lName;
         this.email = email;
@@ -35,4 +35,8 @@ public class Customer extends Model {
 
     @Column(name = "phoneNo")
     private String phoneNo;
+
+    @ManyToMany(mappedBy = "customers")
+    private List<Product> products;
+
 }
